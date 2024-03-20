@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject mainDoor;
-    public Light mainDoorLight;
+    public GameObject mainDoorLocked;
+    public GameObject mainDoorUnlocked;
     
     public GameObject monsterDoor;
     public GameObject monster;
@@ -33,9 +33,8 @@ public class GameManager : MonoBehaviour
 
     private void OpenDoor()
     {
-        mainDoor.SetActive(false); // Animate this is better but just removing it is fine for now
-        mainDoorLight.color = Color.green;
-        mainDoorLight.intensity = 0.5f;
+        mainDoorLocked.SetActive(false);
+        mainDoorUnlocked.SetActive(true);
         buttonPressed = true;
     }
 
