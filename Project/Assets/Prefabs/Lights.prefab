@@ -46,6 +46,7 @@ GameObject:
   - component: {fileID: 2536917302794645290}
   - component: {fileID: 3092031131115214142}
   - component: {fileID: 8116851317163334853}
+  - component: {fileID: 4487695005002857062}
   m_Layer: 0
   m_Name: Light Front
   m_TagString: Untagged
@@ -201,6 +202,20 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 2
   m_ShadowAngle: 0
+--- !u!114 &4487695005002857062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6390835045548527179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09b312d0dc3d8bab8a63e29adca38ded, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lightFadeInterval: 1e-10
+  lightChangeAmount: 0.02
 --- !u!1 &9001218493893792129
 GameObject:
   m_ObjectHideFlags: 0
@@ -214,6 +229,7 @@ GameObject:
   - component: {fileID: 2226015734872846258}
   - component: {fileID: 1459165251335941515}
   - component: {fileID: 1661112503911232361}
+  - component: {fileID: 1017681252529085148}
   m_Layer: 0
   m_Name: Light Back
   m_TagString: Untagged
@@ -369,3 +385,17 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 2
   m_ShadowAngle: 0
+--- !u!114 &1017681252529085148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9001218493893792129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09b312d0dc3d8bab8a63e29adca38ded, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lightFadeInterval: 1e-10
+  lightChangeAmount: 0.02
