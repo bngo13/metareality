@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
     public GameObject monsterDoor;
     public GameObject monster;
 
+    public GameObject playerLight;
+
     public bool buttonPressed;
     
     // Start is called before the first frame update
@@ -22,13 +24,15 @@ public class GameManager : MonoBehaviour
     {
         // Open door
         OpenDoor();
-        // Turn off lights
+        // Turn on player lights
+        OnPlayerLight();
         // Spawn monster
     }
 
-    private void LightsOut()
+    private void OnPlayerLight()
     {
-        
+        // TODO Flicker Light
+        playerLight.SetActive(true);
     }
 
     private void OpenDoor()
