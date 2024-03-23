@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
 
     public Light endLight;
     public TextMeshProUGUI endText;
+    public GameObject endArea;
 
     private static string LOSS_TEXT = "You Lost :(";
     
@@ -46,6 +47,7 @@ public class GameManager : MonoBehaviour
     {
         mainDoorLocked.SetActive(false);
         mainDoorUnlocked.SetActive(true);
+        endArea.gameObject.SetActive(true);
         buttonPressed = true;
     }
 
