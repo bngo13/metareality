@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
 
     public GameObject playerLight;
     private GameObject playerObject;
+    public InfinadeckCore deckCore;
 
     public bool buttonPressed;
 
@@ -54,7 +55,6 @@ public class GameManager : MonoBehaviour
     {
         mainDoorLocked.SetActive(false);
         mainDoorUnlocked.SetActive(true);
-        endArea.gameObject.SetActive(true);
         buttonPressed = true;
     }
 
@@ -71,6 +71,11 @@ public class GameManager : MonoBehaviour
         
     }
 
+    public void SetEndArea(bool status)
+    {
+        endArea.SetActive(status);
+    }
+
     public void Die()
     {
         endText.text = LOSS_TEXT;
@@ -82,6 +87,7 @@ public class GameManager : MonoBehaviour
 
     public void Restart()
     {
+        // There's more we can do with Infinadeck.Infinadeck
         SceneManager.LoadScene(0);
     }
 }

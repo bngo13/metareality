@@ -23,7 +23,7 @@ public class PhysicalButton : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (isPressed) return;
-
+        if (!other.CompareTag("Player")) return;
         buttonObject.transform.localPosition = new Vector3(0, 0.003f, 0);
         interactable = other.gameObject;
         onPress.Invoke();
@@ -34,7 +34,8 @@ public class PhysicalButton : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject != interactable) return;
-
+        if (!other.CompareTag("Player")) return;
+        
         buttonObject.transform.localPosition = new Vector3(0, 0.25f, 0);
         isPressed = false;
         

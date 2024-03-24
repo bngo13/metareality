@@ -14,7 +14,7 @@ public class AlternativeMovement : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        enabled = !infinaDeck.activeSelf;
+        //enabled = !infinaDeck.activeSelf;
         playerRigidBody = gameObject.GetComponent<Rigidbody>();
     }
 
