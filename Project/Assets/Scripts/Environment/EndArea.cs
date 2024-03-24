@@ -14,12 +14,14 @@ public class EndArea : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         if (!other.gameObject.CompareTag("Player")) return;
-        
+
         gameManager.SetEndArea(true);
     }
     
     void OnTriggerExit(Collider other)
     {
+        if (!other.gameObject.CompareTag("Player")) return;
+
         gameManager.SetEndArea(false);
     }
 }
