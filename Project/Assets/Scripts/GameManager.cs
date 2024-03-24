@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     public GameObject mainDoorLocked;
     public GameObject mainDoorUnlocked;
     
-    public GameObject monsterDoor;
+    public List<GameObject> monsterDoor;
     public GameObject monster;
 
     public GameObject playerLight;
@@ -41,6 +41,7 @@ public class GameManager : MonoBehaviour
         // Turn on player lights
         OnPlayerLight();
         // Spawn monster
+        SpawnMonster();
     }
 
     private void OnPlayerLight()
@@ -59,7 +60,10 @@ public class GameManager : MonoBehaviour
 
     private void SpawnMonster()
     {
-        
+        foreach (var wall in monsterDoor)
+        {
+            wall.SetActive(false);
+        }
     }
 
     private void Update()
