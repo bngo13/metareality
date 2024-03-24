@@ -2938,7 +2938,7 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 0.5882353, g: 1, b: 0.5882353, a: 1}
-  m_Intensity: 2
+  m_Intensity: 1
   m_Range: 20
   m_SpotAngle: 54
   m_InnerSpotAngle: 15
@@ -3345,7 +3345,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &421211909
 Transform:
   m_ObjectHideFlags: 0
@@ -5153,8 +5153,8 @@ GameObject:
   m_Component:
   - component: {fileID: 644206206}
   m_Layer: 0
-  m_Name: Ship Start
-  m_TagString: Untagged
+  m_Name: Game Start
+  m_TagString: GameStart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7040,6 +7040,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3863673837160302943, guid: 9c05bcd053b502f4cb7b95c418b889c6, type: 3}
   m_PrefabInstance: {fileID: 889625900}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &889643505
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 889643506}
+  m_Layer: 0
+  m_Name: Game End
+  m_TagString: GameEnd
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &889643506
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 889643505}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 428, y: 128, z: 207}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &892297163
 GameObject:
   m_ObjectHideFlags: 0
@@ -19019,6 +19050,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 1998057184}
   - {fileID: 644206206}
+  - {fileID: 889643506}
   - {fileID: 1702457396}
   - {fileID: 892297164}
   - {fileID: 1251821040}

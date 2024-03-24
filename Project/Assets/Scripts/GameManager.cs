@@ -13,18 +13,24 @@ public class GameManager : MonoBehaviour
     public GameObject monster;
 
     public GameObject playerLight;
+    private GameObject playerObject;
 
     public bool buttonPressed;
 
     public Light endLight;
+    private Color endColor = new (1, .48f, .48f, 1);
     public TextMeshProUGUI endText;
     public GameObject endArea;
 
+    private GameObject gameEnd;
+    
     private static string LOSS_TEXT = "You Lost :(";
     
     // Start is called before the first frame update
     void Start()
     {
+        playerObject = GameObject.FindGameObjectWithTag("Player");
+        gameEnd = GameObject.FindGameObjectWithTag("GameEnd");
         buttonPressed = false;
     }
 
@@ -56,11 +62,18 @@ public class GameManager : MonoBehaviour
         
     }
 
+    private void Update()
+    {
+        
+    }
+
     public void Die()
     {
         endText.text = LOSS_TEXT;
-        endLight.color = new Color(255, 122, 122);
-        
+        endLight.color = endColor;
+        playerObject.transform.position = gameEnd.transform.position;
+        mainDoorLocked.SetActive(true);
+        mainDoorUnlocked.SetActive(false);
     }
 
     public void Restart()
