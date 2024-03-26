@@ -88,6 +88,7 @@ public class GameManager : MonoBehaviour
     public void Restart()
     {
         // There's more we can do with Infinadeck.Infinadeck
+	    Infinadeck.Infinadeck.StopTreadmill();
         SceneManager.LoadScene(0);
     }
 }
