@@ -5360,7 +5360,7 @@ PrefabInstance:
       objectReference: {fileID: 483963152}
     - target: {fileID: 2058607393367157586, guid: 2358dc675134dacd2ae6e0219124d859, type: 3}
       propertyPath: enemySpeedPadding
-      value: 5
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 3099846383839808470, guid: 2358dc675134dacd2ae6e0219124d859, type: 3}
       propertyPath: m_Speed
