@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
     
     public List<GameObject> monsterDoor;
 
+    public float maxFlickerOffTime;
+    public float maxFlickerOnTime;
     public GameObject playerLight;
     private GameObject playerObject;
 
@@ -40,7 +42,7 @@ public class GameManager : MonoBehaviour
         // Open door
         OpenDoor();
         // Turn on player lights
-        PlayerLightOn();
+        StartCoroutine(PlayerLightOn());
         // Spawn monster
         SpawnMonster();
 
@@ -52,10 +54,17 @@ public class GameManager : MonoBehaviour
         endingText.text = "Lockdown Disengaged";
     }
 
-    private void PlayerLightOn()
+    private IEnumerator PlayerLightOn()
     {
-        // TODO Flicker Light
         playerLight.SetActive(true);
+        while (true)
+        {
+            // Flicker Light
+            playerLight.GetComponent<Light>().enabled = true;
+            yield return new WaitForSeconds(Random.Range(1, maxFlickerOnTime));
+            playerLight.GetComponent<Light>().enabled = false;
+            yield return new WaitForSeconds(Random.Range(.1f, maxFlickerOffTime));
+        }
     }
 
     private void OpenDoor()

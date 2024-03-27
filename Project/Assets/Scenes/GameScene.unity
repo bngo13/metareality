@@ -593,7 +593,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5868361897497031310, guid: c975860e50254f046b6e14ba515b8218, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5868361897497031310, guid: c975860e50254f046b6e14ba515b8218, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -17918,6 +17918,8 @@ MonoBehaviour:
   mainDoorUnlocked: {fileID: 1465304113}
   monsterDoor:
   - {fileID: 936723894}
+  maxFlickerOffTime: 0.3
+  maxFlickerOnTime: 5
   playerLight: {fileID: 1728269312}
   buttonPressed: 0
   endingText: {fileID: 187641631}
