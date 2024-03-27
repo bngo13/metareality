@@ -10,14 +10,14 @@ public class GameManager : MonoBehaviour
     public GameObject mainDoorUnlocked;
     
     public List<GameObject> monsterDoor;
-    public GameObject monster;
 
     public GameObject playerLight;
     private GameObject playerObject;
-    public InfinadeckCore deckCore;
 
     public bool buttonPressed;
 
+    public TextMeshProUGUI endingText;
+    
     public Light endLight;
     private Color endColor = new (1, .48f, .48f, 1);
     public TextMeshProUGUI endText;
@@ -40,12 +40,19 @@ public class GameManager : MonoBehaviour
         // Open door
         OpenDoor();
         // Turn on player lights
-        OnPlayerLight();
+        PlayerLightOn();
         // Spawn monster
         SpawnMonster();
+
+        ChangeText();
     }
 
-    private void OnPlayerLight()
+    private void ChangeText()
+    {
+        endingText.text = "Lockdown Disengaged";
+    }
+
+    private void PlayerLightOn()
     {
         // TODO Flicker Light
         playerLight.SetActive(true);
@@ -64,11 +71,6 @@ public class GameManager : MonoBehaviour
         {
             wall.SetActive(false);
         }
-    }
-
-    private void Update()
-    {
-        
     }
 
     public void SetEndArea(bool status)
