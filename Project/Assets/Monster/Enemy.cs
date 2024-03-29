@@ -33,8 +33,13 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         // Get player speed
-        var rawPlayerSpeed = (float)Infinadeck.Infinadeck.GetFloorSpeedMagnitude();
-        if (rawPlayerSpeed < 0.001) {
+        float rawPlayerSpeed;
+        try
+        {
+            rawPlayerSpeed = (float)Infinadeck.Infinadeck.GetFloorSpeedMagnitude();
+        }
+        catch (Exception)
+        {
             rawPlayerSpeed = player.GetComponent<Rigidbody>().velocity.magnitude;
         }
 
