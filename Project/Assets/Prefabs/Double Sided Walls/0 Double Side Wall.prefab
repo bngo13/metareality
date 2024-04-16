@@ -302,6 +302,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7262128510194968801}
+  - component: {fileID: 3808022037725631805}
   m_Layer: 0
   m_Name: 0 Double Side Wall
   m_TagString: Untagged
@@ -326,6 +327,27 @@ Transform:
   - {fileID: 8178228915017985267}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &3808022037725631805
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1523493228928005418}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 4.7817645, y: 2.6370115, z: 0.93573403}
+  m_Center: {x: -1.1104112, y: 1.5073738, z: 0.10145563}
 --- !u!1 &2241706632460485860
 GameObject:
   m_ObjectHideFlags: 0
@@ -1099,7 +1121,12 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2494995272653124902, guid: 4c856c593c2bcae8d988d9758ccaeb41, type: 3}
+    - {fileID: 6652329932356427224, guid: 4c856c593c2bcae8d988d9758ccaeb41, type: 3}
+    - {fileID: 643702830203870697, guid: 4c856c593c2bcae8d988d9758ccaeb41, type: 3}
+    - {fileID: 8511581712113612055, guid: 4c856c593c2bcae8d988d9758ccaeb41, type: 3}
+    - {fileID: 3206437987589617866, guid: 4c856c593c2bcae8d988d9758ccaeb41, type: 3}
     m_RemovedGameObjects:
     - {fileID: 8681666825483889643, guid: 4c856c593c2bcae8d988d9758ccaeb41, type: 3}
     - {fileID: 471378030439924501, guid: 4c856c593c2bcae8d988d9758ccaeb41, type: 3}
@@ -1236,7 +1263,12 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0.227
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2494995272653124902, guid: 4c856c593c2bcae8d988d9758ccaeb41, type: 3}
+    - {fileID: 6652329932356427224, guid: 4c856c593c2bcae8d988d9758ccaeb41, type: 3}
+    - {fileID: 643702830203870697, guid: 4c856c593c2bcae8d988d9758ccaeb41, type: 3}
+    - {fileID: 8511581712113612055, guid: 4c856c593c2bcae8d988d9758ccaeb41, type: 3}
+    - {fileID: 3206437987589617866, guid: 4c856c593c2bcae8d988d9758ccaeb41, type: 3}
     m_RemovedGameObjects:
     - {fileID: 8681666825483889643, guid: 4c856c593c2bcae8d988d9758ccaeb41, type: 3}
     - {fileID: 471378030439924501, guid: 4c856c593c2bcae8d988d9758ccaeb41, type: 3}

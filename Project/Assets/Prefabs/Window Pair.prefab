@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6084973660182419820}
+  - component: {fileID: 3206437987589617866}
   m_Layer: 0
   m_Name: Window Pair
   m_TagString: Untagged
@@ -33,6 +34,27 @@ Transform:
   - {fileID: 293958547719601995}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &3206437987589617866
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5624880744777360981}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 4.674118, y: 2.6955023, z: 0.60939693}
+  m_Center: {x: 4.6186485, y: 1.5973032, z: 4.966621}
 --- !u!1001 &3632959727327323994
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -105,7 +127,8 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 760f6118acef9aa4a870b9e51d9cc44f, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4933108344855138893, guid: 61c66ea7ded2bc637950bd85a9a75d71, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -187,7 +210,8 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 760f6118acef9aa4a870b9e51d9cc44f, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4933108344855138893, guid: 61c66ea7ded2bc637950bd85a9a75d71, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
