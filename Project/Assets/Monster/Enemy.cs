@@ -62,7 +62,7 @@ public class Enemy : MonoBehaviour
 
     private void Chase()
     {
-        animator.speed = 1;
+        animator.speed = .75f;
         ToggleSounds(false);
         animator.SetBool("Running", true);
         agent.SetDestination(player.transform.position);
