@@ -98,6 +98,8 @@ public class GameManager : MonoBehaviour
         endText.text = LOSS_TEXT;
         endLight.color = endColor;
         playerObject.transform.position = gameEnd.transform.position;
+        var oldRotation = playerObject.transform.rotation;
+        playerObject.transform.Rotate(oldRotation.x, 180, oldRotation.z);
         mainDoorLocked.SetActive(true);
         mainDoorUnlocked.SetActive(false);
     }
