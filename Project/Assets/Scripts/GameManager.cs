@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour
     private Color endColor = new (1, .48f, .48f, 1);
     public TextMeshProUGUI endText;
     public GameObject endArea;
+    public GameObject buttonAreaObjects;
 
     private GameObject gameEnd;
     
@@ -45,8 +46,13 @@ public class GameManager : MonoBehaviour
         StartCoroutine(PlayerLightOn());
         // Spawn monster
         SpawnMonster();
-
+        // Change the text to reflect winning.
         ChangeText();
+        OnAroundButtonObjects();
+    }
+    
+    private void OnAroundButtonObjects() {
+        buttonAreaObjects.SetActive(true);
     }
 
     private void ChangeText()
