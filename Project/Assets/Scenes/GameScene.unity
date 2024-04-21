@@ -6100,7 +6100,7 @@ PrefabInstance:
       objectReference: {fileID: 483963152}
     - target: {fileID: 2058607393367157586, guid: 2358dc675134dacd2ae6e0219124d859, type: 3}
       propertyPath: enemySpeedPadding
-      value: 0.75
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 3099846383839808470, guid: 2358dc675134dacd2ae6e0219124d859, type: 3}
       propertyPath: m_Speed
@@ -9990,7 +9990,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28e9ed0a1017a29c78da70fbb7104b23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 15
+  movementSpeed: 1.78816
   infinaDeck: {fileID: 173756841}
 --- !u!1001 &1051878975
 PrefabInstance:
