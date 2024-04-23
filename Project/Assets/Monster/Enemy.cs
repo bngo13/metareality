@@ -33,15 +33,17 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         // Get player speed
-        float rawPlayerSpeed;
+        float rawPlayerSpeed = player.GetComponent<Rigidbody>().velocity.magnitude;
+        /*
         try
         {
             rawPlayerSpeed = (float)Infinadeck.Infinadeck.GetFloorSpeedMagnitude();
         }
         catch (Exception)
         {
-            rawPlayerSpeed = player.GetComponent<Rigidbody>().velocity.magnitude;
+            rawPlayerSpeed = 
         }
+        */
 
         // Apply enemy slowdown padding
         var newEnemySpeed = rawPlayerSpeed * enemySpeedPadding;
