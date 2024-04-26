@@ -34,22 +34,14 @@ public class Enemy : MonoBehaviour
     {
         // Get player speed
         float rawPlayerSpeed = player.GetComponent<Rigidbody>().velocity.magnitude;
-        /*
-        try
-        {
-            rawPlayerSpeed = (float)Infinadeck.Infinadeck.GetFloorSpeedMagnitude();
-        }
-        catch (Exception)
-        {
-            rawPlayerSpeed = 
-        }
-        */
 
-        // Apply enemy slowdown padding
-        var newEnemySpeed = rawPlayerSpeed * enemySpeedPadding;
-        // Take the fastest enemy speed
-        enemySpeed = Math.Max(newEnemySpeed < 0 ? 0 : newEnemySpeed, enemySpeed);
-        agent.speed = enemySpeed;
+        // Enemy is the average of the player speed
+        if (enemySpeed == 0)
+        {
+            enemySpeed = rawPlayerSpeed;
+        }
+        enemySpeed = Math.Max(enemySpeed, (enemySpeed + rawPlayerSpeed) / 2);
+        agent.speed = enemySpeed * enemySpeedPadding;
         //FileLogger.LogData($"Enemy Speed: {enemySpeed}");
 
         if (gameManager.buttonPressed) Chase(); else StayInPlace();

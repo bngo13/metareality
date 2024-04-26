@@ -1,56 +1,58 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Numerics;
+using Unity.VisualScripting;
 using UnityEngine;
-using Vector3 = System.Numerics.Vector3;
+using Valve.VR;
 
 public class AlternativeMovement : MonoBehaviour
 {
-    [SerializeField] private float movementSpeed = 5;
-    [SerializeField] private GameObject infinaDeck;
+    // Used to make player move slower or faster depending on how hard they swing their hand.
+    [SerializeField] private float playerSpeedOffset = 1;
 
     private Rigidbody playerRigidBody;
-    
-    // Start is called before the first frame update
-    void Awake()
+    private Camera playerCamera;
+
+    private float leftControllerSpeed = 0f;
+    private float rightControllerSpeed = 0f;
+
+    private void Start()
     {
-        //enabled = !infinaDeck.activeSelf;
-        playerRigidBody = gameObject.GetComponent<Rigidbody>();
+        playerRigidBody = GetComponent<Rigidbody>();
+        playerCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
     }
 
-    // Update is called once per frame
+    public void HandSpeedLeft(SteamVR_Behaviour_Pose controllerChange, SteamVR_Input_Sources source)
+    {
+        if (source != SteamVR_Input_Sources.LeftHand)
+        {
+            return;
+        }
+
+        var controllerVelocity = controllerChange.GetVelocity().magnitude;
+        leftControllerSpeed = controllerVelocity;
+        Debug.Log("Left Controller Speed: " + leftControllerSpeed);
+    }
+
+    public void HandSpeedRight(SteamVR_Behaviour_Pose controllerChange, SteamVR_Input_Sources source)
+    {
+        if (source != SteamVR_Input_Sources.RightHand)
+        {
+            return;
+        }
+
+        var controllerVelocity = controllerChange.GetVelocity().magnitude;
+        rightControllerSpeed = controllerVelocity;
+        Debug.Log("Right Controller Speed: " + rightControllerSpeed);
+    }
+
     private void Update()
     {
-        FrontBack();
-        LeftRight();
-
-        if (!Input.anyKey)
+        var controllerSpeed = (leftControllerSpeed + rightControllerSpeed) / 2;
+        Debug.Log("Average Controller Speed: " + controllerSpeed);
+        if (controllerSpeed < 1)
         {
-            playerRigidBody.velocity = new UnityEngine.Vector3(0, playerRigidBody.velocity.y, 0);
+            return;
         }
-    }
-
-    private void FrontBack()
-    {
-        if (Input.GetKey(KeyCode.W))
-        {
-            playerRigidBody.velocity = transform.forward * movementSpeed;
-        }
-        if (Input.GetKey(KeyCode.S)) {
-            playerRigidBody.velocity = -transform.forward * movementSpeed;
-        }
-    }
-
-    private void LeftRight()
-    {
-        
-        if (Input.GetKey(KeyCode.A))
-        {
-            playerRigidBody.velocity = -transform.right * movementSpeed;
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            playerRigidBody.velocity = transform.right * movementSpeed;
-        }
+        var forceVector = playerCamera.transform.forward * controllerSpeed;
+        forceVector.y = 0;
+        playerRigidBody.velocity = forceVector * playerSpeedOffset;
     }
 }
