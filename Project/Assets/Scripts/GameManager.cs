@@ -97,17 +97,24 @@ public class GameManager : MonoBehaviour
     {
         endText.text = LOSS_TEXT;
         endLight.color = endColor;
-        playerObject.transform.position = gameEnd.transform.position;
-        var rotation1 = playerObject.transform.rotation;
-        var oldRotation = rotation1;
-        
-        var rotation = rotation1;
-        rotation.y = 180;
-        rotation1 = rotation;
-        playerObject.transform.rotation = rotation1;
+
+        TeleportToEnd();
 
         mainDoorLocked.SetActive(true);
         mainDoorUnlocked.SetActive(false);
+    }
+
+    private void TeleportToEnd()
+    {
+        // Teleport
+        var deathPos = gameEnd.transform.position;
+        deathPos.y = playerObject.transform.position.y;
+        playerObject.transform.position = deathPos;
+
+        // Rotate to face end
+        var currentRotation = playerObject.transform.rotation;
+        currentRotation.y = 180;
+        playerObject.transform.rotation = currentRotation;
     }
 
     public void Restart()
